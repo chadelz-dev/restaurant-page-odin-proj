@@ -123,6 +123,8 @@ npm install --save-dev webpack-merge css-minimizer-webpack-plugin
 
  - split webpack.config.js
 
+// //////
+
 
 -- webpack.common.js
 
@@ -134,6 +136,7 @@ npm install --save-dev webpack-merge css-minimizer-webpack-plugin
 
    - reuses code, supports menu (two items/row) home image (full width)
 
+// //////
 
 
 -- webpack.dev.js
@@ -147,3 +150,62 @@ npm install --save-dev webpack-merge css-minimizer-webpack-plugin
  - why:
    
    - fast dev, better watchFiles
+
+// //////
+
+
+-- webpack.prod.js
+
+ - what it does:
+
+   - production config mode, minifies js and css, leap maps to dist/
+
+ - why:
+
+   - smaller, faster site.
+
+// ////////////////////////////////////////////////////////////////////////////
+
+
+-- setup:
+
+ - delete wbepack.config.js
+
+ - create webpack.common.js, webpack.dev.js, webpack.prod.js
+
+
+-- production optimizers:
+
+npm run build
+
+ - minifies js and css
+
+ - tree shakes unused code
+
+ - optimizes images and fonts (dist/assets/)
+
+
+ - what it does:
+
+   - shrinks bundles, removes dead code, optimizes images, fonts, etc.
+
+ - why:
+
+   - faster page loads.
+
+
+// ////////////////////////////////////////////////////////////////////////////
+
+
+-- template repository: 
+
+ - Go to https://github.com/chadelz-dev/restaurant-page-odin-proj > Settings.
+
+ - Check “Template repository”.
+
+   - What: Makes repo reusable.
+
+   - Why: Quick setup for new projects.
+
+
+-- 
