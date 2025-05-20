@@ -1,0 +1,78 @@
+-- sets up a gh-pages branch and deploys your project’s built files 
+
+ -(from the dist folder) to GitHub Pages.
+
+// ////////////////////////////////////////////////////////////////////////////
+
+
+-- Instructions
+
+-- Create and switch to the gh-pages branch  
+
+git branch gh-pages
+git checkout gh-pages
+
+-- notes:
+
+ - git branch gh-pages: Makes a new branch called gh-pages.  
+
+ - git checkout gh-pages: Switches to that branch.
+
+// //////
+
+
+-- Merge updates from main  
+
+git merge main --no-edit
+
+-- notes:
+
+ - Brings the latest code from main into gh-pages without extra steps.
+
+// //////
+
+
+-- Build the project  
+
+npm run build
+
+-- notes:
+
+ - Creates the production-ready files in the dist folder (e.g., using Webpack).
+
+// //////
+
+
+-- Add and commit the dist folder  
+
+git add dist -f
+git commit -m "Deployment commit"
+
+-- notes:
+
+ - git add dist -f: Adds the dist folder to the commit, even if it’s ignored elsewhere.  
+
+ - git commit -m "Deployment commit": Saves the changes with a message.
+
+// //////
+
+
+-- Push dist to gh-pages  
+
+git subtree push --prefix dist origin gh-pages
+
+-- notes: 
+
+ - Sends the dist folder to the gh-pages branch on GitHub.
+
+// //////
+
+
+-- Go back to main  
+
+git checkout main
+
+-- notes:
+
+ - Switches you back to the main branch.
+
